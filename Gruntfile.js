@@ -13,9 +13,6 @@ if (!env.BASEPATH_BOOTSTRAP4_BUNDLE || !env.NODE_MODULES_BOOTSTRAP4) {
     throw new Error("Env not set");
 }
 
-/** @type {typeof import("./index")} */
-const { Bootstrap4 } = require('{{init_cwd}}')
-
 /** @type {typeof import('./src/grunt/bootstrap4-grunt')} */
 const { Bootstrap4Grunt } = require('{{init_cwd}}/src/grunt/bootstrap4-grunt');
 
