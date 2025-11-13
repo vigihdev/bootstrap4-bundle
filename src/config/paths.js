@@ -1,8 +1,8 @@
 const path = require("path");
 const { env } = require('node:process')
 
-const BASEPATH = env?.BASE_PATH_BOOTSTRAP4_BUNDLE;
-const NODE = path.join(env?.npm_config_local_prefix, 'node_modules');
+const BASEPATH = env?.BASEPATH_BOOTSTRAP4_BUNDLE;
+const NODE = env?.NODE_MODULES_BOOTSTRAP4;
 
 module.exports.Paths = {
     Basepath: BASEPATH,

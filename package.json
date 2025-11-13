@@ -28,7 +28,7 @@
         "typeahead.js": "^0.11.1"
     },
     "scripts": {
-        "dev": "nodemon index.js",
+        "dev": "nodemon dev.js",
         "grunt:bs4": "bash ./src/scripts/grunt.sh bootstrap4",
         "grunt:bs4:test": "bash ./src/scripts/grunt.sh bootstrap4:test",
         "grunt:bs4:clean": "bash ./src/scripts/grunt.sh bootstrap4:clean",

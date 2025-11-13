@@ -1,14 +1,15 @@
-const path = require('node:path');
-const fs = require('node:fs');
-/** @type {DotEnv} */
-const dotEnv = require('./src/config/dotEnv').DotEnv.boot();
-const { cwd, env } = require('node:process');
-const { DotEnv } = require('./src/config/dotEnv');
-const { Paths } = require('./src/config/paths');
-const { Bootstrap4Sass } = require('./src/sass/bootstrap4-sass');
+const { env } = require('node:process')
+const { Paths } = require('./src/config/paths')
+const { Bootstrap4Sass } = require('./src/sass/bootstrap4-sass')
+const { Bootstrap4Grunt } = require('./src/grunt/bootstrap4-grunt')
+const path = require('node:path')
 
-
-console.log(`Server From ${__dirname}\n`);
-console.log(dotEnv.getGrunt())
-console.log(env)
-// console.log(BootstrapSass.copy.main.files)
+module.exports.Bootstrap4 = {
+    name: "@vigihdev/bootstrap4-bundle",
+    basepath: env?.BASEPATH_BOOTSTRAP4_BUNDLE,
+    node: env?.NODE_MODULES_BOOTSTRAP4,
+    Paths: Paths,
+    script_path: path.join(__dirname, 'src', 'scripts', 'grunt.sh'),
+    Sass: Bootstrap4Sass,
+    grunt: Bootstrap4Grunt,
+}

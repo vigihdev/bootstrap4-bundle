@@ -1,7 +1,7 @@
 // bootstrap4-sass.js
 const path = require("node:path");
 const fs = require("node:fs");
-const Paths = require("../config/paths").Paths;
+const { Paths } = require("../config/paths");
 
 
 // Sass Configuration
