@@ -2,18 +2,22 @@
 // Gruntfile.js
 const { env } = require('node:process')
 const path = require('node:path');
+const fs = require('node:fs');
+const { spawnSync } = require('node:child_process');
+const HOME = process.env?.HOME;
+const INIT_CWD = process.env?.INIT_CWD;
 
-const HOME = env['HOME'];
-const BASEPATH = path.join(HOME, 'VigihDev', 'NpmPackage', 'bootstrap4-bundle');
-const PROCESS_BASEPATH = path.join(BASEPATH);
-env.BASEPATH_BOOTSTRAP4_BUNDLE = path.join(BASEPATH, '..', 'testBuild')
-env.NODE_MODULES_BOOTSTRAP4 = path.join(BASEPATH, 'node_modules')
+env.BASEPATH_BOOTSTRAP4_BUNDLE = path.join(INIT_CWD, '..', 'assets', 'bootstrap')
+env.NODE_MODULES_BOOTSTRAP4 = path.join(INIT_CWD, 'node_modules')
+if (!env.BASEPATH_BOOTSTRAP4_BUNDLE || !env.NODE_MODULES_BOOTSTRAP4) {
+    throw new Error("Env not set");
+}
 
 /** @type {typeof import("./index")} */
-const { Bootstrap4 } = require(`${BASEPATH}`)
+const { Bootstrap4 } = require(`${INIT_CWD}`)
 
 /** @type {typeof import('./src/grunt/bootstrap4-grunt')} */
-const { Bootstrap4Grunt } = require(`${BASEPATH}/src/grunt/bootstrap4-grunt`);
+const { Bootstrap4Grunt } = require(`${INIT_CWD}/src/grunt/bootstrap4-grunt`);
 
 /** @param {import("grunt")} grunt */
 module.exports = function (grunt) {
