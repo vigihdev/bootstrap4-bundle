@@ -3,21 +3,21 @@
 const { env } = require('node:process')
 const path = require('node:path');
 const fs = require('node:fs');
-const { spawnSync } = require('node:child_process');
 const HOME = process.env?.HOME;
 const INIT_CWD = process.env?.INIT_CWD;
 
-env.BASEPATH_BOOTSTRAP4_BUNDLE = path.join(INIT_CWD, '..', 'assets', 'bootstrap')
-env.NODE_MODULES_BOOTSTRAP4 = path.join(INIT_CWD, 'node_modules')
+env.BASEPATH_BOOTSTRAP4_BUNDLE = '{{env.BASEPATH_BOOTSTRAP4_BUNDLE}}'
+env.NODE_MODULES_BOOTSTRAP4 = '{{env.NODE_MODULES_BOOTSTRAP4}}'
+
 if (!env.BASEPATH_BOOTSTRAP4_BUNDLE || !env.NODE_MODULES_BOOTSTRAP4) {
     throw new Error("Env not set");
 }
 
 /** @type {typeof import("./index")} */
-const { Bootstrap4 } = require(`${INIT_CWD}`)
+const { Bootstrap4 } = require('{{init_cwd}}')
 
 /** @type {typeof import('./src/grunt/bootstrap4-grunt')} */
-const { Bootstrap4Grunt } = require(`${INIT_CWD}/src/grunt/bootstrap4-grunt`);
+const { Bootstrap4Grunt } = require('{{init_cwd}}/src/grunt/bootstrap4-grunt');
 
 /** @param {import("grunt")} grunt */
 module.exports = function (grunt) {
@@ -37,10 +37,9 @@ module.exports = function (grunt) {
     Bootstrap4Grunt(grunt);
 
     grunt.registerTask(`bootstrap4:test`, 'Test Grunt', async () => {
-        grunt.log.writeln(__dirname)
-        grunt.log.writeln(`BASEPATH : ${BASEPATH}`)
-        grunt.log.writeln(`PROCESS_BASEPATH : ${PROCESS_BASEPATH}`)
-        grunt.log.writeln(`PROCESS_BASEPATH : ${Bootstrap4.basepath}`)
+        grunt.log.writeln(__dirname);
+        grunt.log.writeln(`Env Basepath Bootstrap4 Bundle : ${env.BASEPATH_BOOTSTRAP4_BUNDLE}`);
+        grunt.log.writeln(`Env Node Modules Bootstrap4 : ${env.NODE_MODULES_BOOTSTRAP4}`);
     })
 
 };

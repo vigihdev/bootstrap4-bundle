@@ -6,8 +6,10 @@ env.NODE_MODULES_BOOTSTRAP4 = path.join(cwd(), 'node_modules')
 const { Bootstrap4 } = require('./index')
 
 console.log(`Server From ${__dirname}\n`);
-console.log(Bootstrap4.basepath)
-// console.log(Bootstrap4.node)
-console.log(Bootstrap4.Sass.sass.dist.files)
-console.log(Bootstrap4.Sass.copy.main.files)
-console.log(Bootstrap4.script_path)
+const dotEnv = new Bootstrap4.DotEnv();
+dotEnv.boot(path.join(__dirname, '.env'));
+
+var template = Bootstrap4.Templates.grunt
+template = template.replace(/{{init_cwd}}/g, `${cwd()}`)
+template = template.replace(/{{env.BASEPATH_BOOTSTRAP4_BUNDLE}}/g, `${cwd()}`)
+template = template.replace(/{{env.NODE_MODULES_BOOTSTRAP4}}/g, `${cwd()}/node_modules`)
