@@ -8,7 +8,7 @@ const BASEPATH = path.join(HOME, 'VigihDev', 'NpmPackage', 'bootstrap4-bundle');
 const PROCESS_BASEPATH = path.join(HOME, 'VigihDev', 'NpmPackage', 'bootstrap4-bundle');
 
 // reigister env
-/** @type {typeof import('./src/config/dotEnv')} */
+/** @type {typeof import('./src/config/dotEnv').DotEnv} dotEnv */
 const dotEnv = require(`${PROCESS_BASEPATH}/src/config/dotEnv`).DotEnv.boot(BASEPATH);
 
 /** @type {typeof import('./src/grunt/bootstrap4-grunt')} */
@@ -31,9 +31,10 @@ module.exports = function (grunt) {
 
     Bootstrap4Grunt(grunt);
 
-    grunt.registerTask(`test`, 'Test Grunt', async () => {
+    grunt.registerTask(`bootstrap4:test`, 'Test Grunt', async () => {
         grunt.log.writeln(__dirname)
         grunt.log.writeln(`BASEPATH : ${BASEPATH}`)
+        grunt.log.writeln(`ENV BASE_PATH_BOOTSTRAP4_BUNDLE : ${dotEnv.getBasePath()}`)
         grunt.log.writeln(`PROCESS_BASEPATH : ${PROCESS_BASEPATH}`)
     })
 
