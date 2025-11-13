@@ -31,9 +31,9 @@
         "dev": "nodemon dev.js",
         "grunt:bs4": "bash ./src/scripts/grunt.sh bootstrap4",
         "grunt:bs4:test": "node ./src/scripts/grunt.js bootstrap4:test",
-        "grunt:bs4:clean": "bash ./src/scripts/grunt.sh bootstrap4:clean",
-        "grunt:bs4:fresh": "bash ./src/scripts/grunt.sh bootstrap4:fresh",
-        "grunt:bs4:dist": "bash ./src/scripts/grunt.sh bootstrap4:dist",
-        "grunt:bs4:build": "bash ./src/scripts/grunt.sh bootstrap4:build"
+        "grunt:bs4:clean": "node ./src/scripts/grunt.js bootstrap4:clean",
+        "grunt:bs4:fresh": "node ./src/scripts/grunt.js bootstrap4:fresh",
+        "grunt:bs4:dist": "node ./src/scripts/grunt.js bootstrap4:dist",
+        "grunt:bs4:build": "node ./src/scripts/grunt.js bootstrap4:build"
     }
 }
