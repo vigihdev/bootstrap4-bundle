@@ -1,0 +1,38 @@
+{
+    "name": "@vigihdev/bootstrap4-bundle",
+    "version": "0.1.0-dev",
+    "description": "Components From Project Bootstrap",
+    "main": "index.js",
+    "keywords": [
+        "project",
+        "bootstrap",
+        "components"
+    ],
+    "author": "vigihdev",
+    "license": "MIT",
+    "dependencies": {
+        "@eonasdan/tempus-dominus": "^6.9.11",
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^4.6.0",
+        "bs5-lightbox": "^1.8.3",
+        "clipboard": "^2.0.11",
+        "easytimer.js": "^4.6.0",
+        "handlebars": "^4.7.7",
+        "infinite-scroll": "^4.0.1",
+        "jquery": "^3.7.1",
+        "lightbox2": "^2.11.5",
+        "moment": "^2.30.1",
+        "owl.carousel": "^2.3.4",
+        "popper.js": "^1.16.1",
+        "select2": "^4.1.0-rc.0",
+        "typeahead.js": "^0.11.1"
+    },
+    "scripts": {
+        "dev": "nodemon index.js",
+        "grunt:bs4": "bash ./src/scripts/grunt.sh bootstrap4",
+        "grunt:bs4:clean": "bash ./src/scripts/grunt.sh bootstrap4:clean",
+        "grunt:bs4:fresh": "bash ./src/scripts/grunt.sh bootstrap4:fresh",
+        "grunt:bs4:dist": "bash ./src/scripts/grunt.sh bootstrap4:dist",
+        "grunt:bs4:build": "bash ./src/scripts/grunt.sh bootstrap4:build"
+    }
+}
