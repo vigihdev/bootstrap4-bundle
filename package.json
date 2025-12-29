@@ -17,6 +17,9 @@
     "bin": {
         "bs4bundle": "bin/bs4bundle"
     },
+    "scripts": {
+        "install": "src/vendor/scripts/install.js"
+    },
     "dependencies": {
         "@eonasdan/tempus-dominus": "^6.9.11",
         "@popperjs/core": "^2.11.8",
