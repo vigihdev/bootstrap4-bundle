@@ -1,22 +1,35 @@
 #!/usr/bin/env node
 
+// bs4bundle
+
 var fs = require('node:fs');
 var path = require('node:path');
 var { chdir, cwd } = require('node:process');
-var { Io } = require('@vigihdev/bootstrap4-bundle/src/vendor/util/io');
+var { Io } = require('../src/vendor/util/io');
 var { spawn, spawnSync } = require('node:child_process');
 
-const oldPath = cwd();
-const bootstrap4BundlePath = path.resolve(cwd(), 'node_modules', '@vigihdev', 'bootstrap4-bundle');
+const binFile = require.main.filename;
+const binDir = path.dirname(binFile);
+const pkgRoot = path.resolve(binDir, '..');
 
-chdir(bootstrap4BundlePath);
+var [, , raw] = process.argv;
 
-options = {};
-process.argv.splice(2).forEach(function (entry) {
-    if (entry.slice(0, 5) === 'grunt') {
-        spawnSync(entry.slice(0, 5), [entry.slice(6)], { stdio: 'inherit' });
-        return;
-    }
-    Io.error(`Unknown command: ${entry}`);
-});
+if (!raw) {
+    Io.info('Usage: bs4bundle grunt:<task>');
+    spawnSync('grunt', ['--help'], { stdio: 'inherit' });
+    process.exit(1);
+}
 
+var parts = raw.split(':');
+var runner = parts.shift();
+var task = parts.join(':');
+
+if (runner !== 'grunt') {
+    Io.error('Unknown runner: ' + runner);
+    process.exit(1);
+}
+
+process.chdir(pkgRoot);
+
+spawnSync('grunt', [task], { stdio: 'inherit' })
+process.exit(1);

@@ -18,7 +18,8 @@
         "bs4bundle": "bin/bs4bundle"
     },
     "scripts": {
-        "install": "src/vendor/scripts/install.js"
+        "install": "src/vendor/scripts/install.js",
+        "bs4bundle": "bin/bs4bundle"
     },
     "dependencies": {
         "@eonasdan/tempus-dominus": "^6.9.11",
