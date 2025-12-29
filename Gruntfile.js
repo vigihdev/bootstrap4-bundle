@@ -1,8 +1,7 @@
 'use strict';
 // Gruntfile.js
 
-const { Io, Bootstrap4Grunt, ThemesStylesGrunt, ThemesBootstrapGrunt, ThemesComponentsGrunt, BundleBootstrap4Grunt } = require('./index');
-const { Paths } = require('./src/vendor/config/paths');
+const { Io, Paths, Bootstrap4Grunt, ThemesStylesGrunt, ThemesBootstrapGrunt, ThemesComponentsGrunt, BundleBootstrap4Grunt } = require('./index');
 
 /** @param {import("grunt")} grunt */
 module.exports = function (grunt) {

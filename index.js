@@ -1,4 +1,4 @@
-const { Paths } = require('./src/vendor/util/paths')
+const { Paths } = require('./src/vendor/config/paths')
 const { Io } = require('./src/vendor/util/io')
 const { Bootstrap4Grunt } = require('./src/vendor/grunt/bootstrap4-grunt')
 const { ThemesStylesGrunt } = require('./src/vendor/grunt/themes-styles-grunt')
