@@ -12,3 +12,4 @@ package-lock.json
 /docs
 /dist
 /builds
+dev.js
