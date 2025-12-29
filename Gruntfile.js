@@ -1,7 +1,8 @@
 'use strict';
 // Gruntfile.js
 
-const { Io, Bootstrap4Grunt, ThemesStylesGrunt, ThemesBootstrapGrunt, ThemesComponentsGrunt, BundleBootstrap4Grunt } = require('./index')
+const { Io, Bootstrap4Grunt, ThemesStylesGrunt, ThemesBootstrapGrunt, ThemesComponentsGrunt, BundleBootstrap4Grunt } = require('./index');
+const { Paths } = require('./src/vendor/config/paths');
 
 /** @param {import("grunt")} grunt */
 module.exports = function (grunt) {
@@ -25,7 +26,7 @@ module.exports = function (grunt) {
     BundleBootstrap4Grunt(grunt);
 
     grunt.registerTask(`bootstrap4:test`, 'Test Grunt', function () {
-        Io.write('Test Grunt');
+        Io.write(Paths.Basepath);
     })
 
 };
