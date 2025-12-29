@@ -17,7 +17,14 @@ if (fs.existsSync(cwdBasePath) && fs.statSync(cwdBasePath).isDirectory()) {
     ASSETS_MAIN = path.resolve(BASEPATH_MAIN, 'src', 'assets');
 }
 
-// validate base path and node
+// validate cwd packageName is valid
+if (cwd().slice(`-${packageName.length}`) === packageName) {
+    NODE_MAIN = path.resolve(cwd(), '..', '..', '..', 'node_modules');
+    BASEPATH_MAIN = cwd();
+    ASSETS_MAIN = path.resolve(BASEPATH_MAIN, 'src', 'assets');
+}
+
+// validate base path and node paths are valid
 if (
     !fs.existsSync(BASEPATH_MAIN) || !fs.statSync(BASEPATH_MAIN).isDirectory() ||
     !fs.existsSync(NODE_MAIN) || !fs.statSync(NODE_MAIN).isDirectory() ||
