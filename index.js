@@ -1,19 +1,15 @@
-const { env } = require('node:process')
-const { Paths } = require('./src/config/paths')
-const { DotEnv } = require('./src/config/dotEnv')
-const { Bootstrap4Sass } = require('./src/sass/bootstrap4-sass')
-const { Bootstrap4Grunt } = require('./src/grunt/bootstrap4-grunt')
-const { Templates } = require('./src/templates/grunt')
-const path = require('node:path')
+const { Io } = require('./src/vendor/util/io')
+const { Bootstrap4Grunt } = require('./src/vendor/grunt/bootstrap4-grunt')
+const { ThemesStylesGrunt } = require('./src/vendor/grunt/themes-styles-grunt')
+const { ThemesComponentsGrunt } = require('./src/vendor/grunt/themes-components-grunt')
+const { ThemesBootstrapGrunt } = require('./src/vendor/grunt/themes-bootstrap-grunt')
+const { BundleBootstrap4Grunt } = require('./src/vendor/grunt/bundle-bootstrap4-grunt')
 
-module.exports.Bootstrap4 = {
-    name: "@vigihdev/bootstrap4-bundle",
-    basepath: env?.BASEPATH_BOOTSTRAP4_BUNDLE,
-    node: env?.NODE_MODULES_BOOTSTRAP4,
-    Paths: Paths,
-    DotEnv: DotEnv,
-    script_path: path.join(__dirname, 'src', 'scripts', 'grunt.sh'),
-    Sass: Bootstrap4Sass,
-    grunt: Bootstrap4Grunt,
-    Templates: Templates,
+module.exports = {
+    Io,
+    Bootstrap4Grunt,
+    ThemesStylesGrunt,
+    ThemesComponentsGrunt,
+    ThemesBootstrapGrunt,
+    BundleBootstrap4Grunt
 }

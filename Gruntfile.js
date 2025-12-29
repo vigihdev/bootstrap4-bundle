@@ -1,20 +1,7 @@
 'use strict';
 // Gruntfile.js
-const { env } = require('node:process')
-const path = require('node:path');
-const fs = require('node:fs');
-const HOME = process.env?.HOME;
-const INIT_CWD = process.env?.INIT_CWD;
 
-env.BASEPATH_BOOTSTRAP4_BUNDLE = '{{env.BASEPATH_BOOTSTRAP4_BUNDLE}}'
-env.NODE_MODULES_BOOTSTRAP4 = '{{env.NODE_MODULES_BOOTSTRAP4}}'
-
-if (!env.BASEPATH_BOOTSTRAP4_BUNDLE || !env.NODE_MODULES_BOOTSTRAP4) {
-    throw new Error("Env not set");
-}
-
-/** @type {typeof import('./src/grunt/bootstrap4-grunt')} */
-const { Bootstrap4Grunt } = require('{{init_cwd}}/src/grunt/bootstrap4-grunt');
+const { Io, Bootstrap4Grunt, ThemesStylesGrunt, ThemesBootstrapGrunt, ThemesComponentsGrunt, BundleBootstrap4Grunt } = require('./index')
 
 /** @param {import("grunt")} grunt */
 module.exports = function (grunt) {
@@ -32,11 +19,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-strip-css-comments');
 
     Bootstrap4Grunt(grunt);
+    ThemesStylesGrunt(grunt);
+    ThemesBootstrapGrunt(grunt);
+    ThemesComponentsGrunt(grunt);
+    BundleBootstrap4Grunt(grunt);
 
-    grunt.registerTask(`bootstrap4:test`, 'Test Grunt', async () => {
-        grunt.log.writeln(__dirname);
-        grunt.log.writeln(`Env Basepath Bootstrap4 Bundle : ${env.BASEPATH_BOOTSTRAP4_BUNDLE}`);
-        grunt.log.writeln(`Env Node Modules Bootstrap4 : ${env.NODE_MODULES_BOOTSTRAP4}`);
+    grunt.registerTask(`bootstrap4:test`, 'Test Grunt', function () {
+        Io.write('Test Grunt');
     })
 
 };

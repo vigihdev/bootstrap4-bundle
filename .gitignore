@@ -9,3 +9,4 @@ GEMINI.md
 /node_modules
 package-lock.json
 /nodemon.js
+/docs
