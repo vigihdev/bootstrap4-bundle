@@ -10,3 +10,5 @@ GEMINI.md
 package-lock.json
 /nodemon.js
 /docs
+/dist
+/builds
