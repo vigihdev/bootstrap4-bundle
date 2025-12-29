@@ -14,6 +14,8 @@ const pkgRoot = path.resolve(binDir, '..');
 
 var [, , raw] = process.argv;
 
+process.chdir(pkgRoot);
+
 if (!raw) {
     Io.info('Usage: bs4bundle grunt:<task>');
     spawnSync('grunt', ['--help'], { stdio: 'inherit' });
@@ -29,7 +31,6 @@ if (runner !== 'grunt') {
     process.exit(1);
 }
 
-process.chdir(pkgRoot);
 
 spawnSync('grunt', [task], { stdio: 'inherit' })
 process.exit(1);
