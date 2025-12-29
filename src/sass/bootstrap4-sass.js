@@ -1,3 +1,4 @@
+"use strict";
 // bootstrap4-sass.js
 const path = require("node:path");
 const fs = require("node:fs");
@@ -139,4 +140,13 @@ module.exports.Bootstrap4Sass = {
             }
         }
     },
+    watch: {
+        css: [
+            `${Paths.LIBRARIES.BOOTSTRAP}/scss/*.scss`,
+            `${Paths.LIBRARIES.BOOTSTRAP}/scss/*/*.scss`,
+        ],
+        js: [
+            `${Paths.LIBRARIES.BOOTSTRAP}/js/*.js`,
+        ]
+    }
 };

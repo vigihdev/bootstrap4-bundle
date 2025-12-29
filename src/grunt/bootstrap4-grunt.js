@@ -64,4 +64,23 @@ module.exports.Bootstrap4Grunt = function (grunt) {
         grunt.task.run(`${COMMAND}:build`);
     });
 
+    grunt.task.registerTask(`${COMMAND}:watch`, 'Development Watch', function () {
+        const args = grunt?.task?.current?.args ?? [];
+        const initConfig = {
+            watch: {
+                css: {
+                    files: Bootstrap4Sass.watch.css,
+                    tasks: [`${COMMAND}:dist`]
+                },
+                js: {
+                    files: Bootstrap4Sass.watch.js,
+                    tasks: [`${COMMAND}:dist:concat`]
+                }
+            }
+        }
+
+        grunt.initConfig(initConfig)
+        grunt.task.run(['watch'])
+    });
+
 };
