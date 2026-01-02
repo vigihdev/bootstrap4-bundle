@@ -275,27 +275,27 @@ textarea.form-control {
 .textfield-primary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-left,
 .textfield-primary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-middle,
 .textfield-primary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-right {
-  border-top: 2px solid #007bff;
-  border-bottom: 2px solid #007bff;
+  border-top: 2px solid #b90000;
+  border-bottom: 2px solid #b90000;
 }
 .textfield-primary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-left {
-  border-left: 2px solid #007bff;
+  border-left: 2px solid #b90000;
 }
 .textfield-primary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-right {
-  border-right: 2px solid #007bff;
+  border-right: 2px solid #b90000;
 }
 
 .textfield-secondary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-left,
 .textfield-secondary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-middle,
 .textfield-secondary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-right {
-  border-top: 2px solid #6c757d;
-  border-bottom: 2px solid #6c757d;
+  border-top: 2px solid #ffce0a;
+  border-bottom: 2px solid #ffce0a;
 }
 .textfield-secondary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-left {
-  border-left: 2px solid #6c757d;
+  border-left: 2px solid #ffce0a;
 }
 .textfield-secondary.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-right {
-  border-right: 2px solid #6c757d;
+  border-right: 2px solid #ffce0a;
 }
 
 .textfield-success.textfield-outline.textfield-floating-label.textfield-floating-label-active .textfield-outline-left,
@@ -591,18 +591,18 @@ input[type=number] {
 }
 
 .form-group.form-group-rounded.form-group.form-group-rounded-primary.textfield-rounded-active .input-group.input-group-rounded .input-group-prepend .input-group-text {
-  border-color: #007bff;
+  border-color: #b90000;
 }
 .form-group.form-group-rounded.form-group.form-group-rounded-primary.textfield-rounded-active .input-group.input-group-rounded .form-control {
-  border-color: #007bff;
+  border-color: #b90000;
   border-left: none;
 }
 
 .form-group.form-group-rounded.form-group.form-group-rounded-secondary.textfield-rounded-active .input-group.input-group-rounded .input-group-prepend .input-group-text {
-  border-color: #6c757d;
+  border-color: #ffce0a;
 }
 .form-group.form-group-rounded.form-group.form-group-rounded-secondary.textfield-rounded-active .input-group.input-group-rounded .form-control {
-  border-color: #6c757d;
+  border-color: #ffce0a;
   border-left: none;
 }
 

@@ -42,6 +42,7 @@ module.exports.Bootstrap4Grunt = function (grunt) {
             concat: Bootstrap4Sass.concat,
             copy: Bootstrap4Sass.copy,
         }
+
         grunt.initConfig(initConfig)
         if (args.length > 0) {
             Object.keys(initConfig).forEach(k => {
@@ -51,7 +52,6 @@ module.exports.Bootstrap4Grunt = function (grunt) {
             })
             return;
         }
-
         grunt.task.run(['sass', 'concat', 'copy'])
     });
 

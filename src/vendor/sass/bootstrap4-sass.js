@@ -22,6 +22,7 @@ const sass = {
     }
 };
 
+
 // Copy Files Configuration
 const copyFiles = [
     // JavaScript Files
@@ -38,7 +39,6 @@ const copyFiles = [
     { expand: true, cwd: path.join(Paths.LIBRARIES.CLIPBOARD, 'dist'), src: ['clipboard.js'], dest: DIST_BS4.JS },
 
     // CSS Files
-    { expand: true, cwd: path.join(Paths.LIBRARIES.BOOTSTRAP, 'dist/css'), src: ['bootstrap.css'], dest: DIST_BS4.CSS },
     { expand: true, cwd: path.join(Paths.LIBRARIES.SELECT2, 'dist/css'), src: ['select2.css'], dest: DIST_BS4.CSS },
     { expand: true, cwd: path.join(Paths.LIBRARIES.EONASDAN, 'tempus-dominus/dist/css'), src: ['tempus-dominus.css'], dest: DIST_BS4.CSS }
 ];

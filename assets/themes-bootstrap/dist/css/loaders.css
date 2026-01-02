@@ -79,14 +79,14 @@
 }
 
 .loader-circle-primary {
-  border-color: #007bff;
+  border-color: #b90000;
   border-bottom-color: #fff;
   border-bottom-color: #ffce0a;
 }
 
 .loader-circle-secondary {
-  border-color: #6c757d;
-  border-bottom-color: #fff;
+  border-color: #ffce0a;
+  border-bottom-color: #212529;
   border-bottom-color: #b90000;
 }
 
